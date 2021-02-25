@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bar"
+    app:startDestination="@id/id_movie">
+
+    <fragment
+        android:id="@+id/id_movie"
+        android:name="com.baharudin.movieapp.ui.movie.MovieFragment"
+        android:label="Movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_id_movie_to_nav_details"
+            app:destination="@id/nav_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/id_favorite"
+        android:name="com.baharudin.movieapp.ui.favorite.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_id_favorite_to_nav_details"
+            app:destination="@id/nav_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.baharudin.movieapp.ui.details.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="movie"
+            app:argType="com.baharudin.movieapp.data.remote.Movie" />
+    </fragment>
+</navigation>
